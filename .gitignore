@@ -1,5 +1,6 @@
 # Compiled JAVA
 *.source
 *.jar
+*.class
 
 target/
