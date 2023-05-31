@@ -438,5 +438,10 @@ public class JVisaInstrument implements AutoCloseable {
     public String getWriteTerminator() {
         return writeTerminator;
     }
-
+    public void setBaudRate(int baudRate) throws JVisaException {
+        setAttribute(JVisaLibrary.VI_ATTR_ASRL_BAUD, baudRate);
+    }
+    public int getBaudRate() throws JVisaException {
+        return getAttributeBytes(JVisaLibrary.VI_ATTR_ASRL_BAUD);
+    }
 }
