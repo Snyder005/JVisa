@@ -438,10 +438,15 @@ public class JVisaInstrument implements AutoCloseable {
     public String getWriteTerminator() {
         return writeTerminator;
     }
+
+    /**
+     * VI_ATTR_ASRL_BAUD is the baud rate. The default is 9600.
+     *
+     * @see <a href="https://www.ni.com/docs/en-US/bundle/ni-visa/page/ni-visa/vi_attr_asrl_baud.html">VI_ATTR_ASRL_BAUD</a>
+     * @see <a href="https://pyvisa.readthedocs.io/en/latest/introduction/communication.html">PyVISA docs page
+     * "Communicating with your instrument"</a>
+     */
     public void setBaudRate(int baudRate) throws JVisaException {
         setAttribute(JVisaLibrary.VI_ATTR_ASRL_BAUD, baudRate);
-    }
-    public int getBaudRate() throws JVisaException {
-        return getAttributeBytes(JVisaLibrary.VI_ATTR_ASRL_BAUD);
     }
 }
